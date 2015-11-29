@@ -13,4 +13,8 @@ router.get('/:id', (req, res, next) => {
   res.status(200).send({ success: true, id: req.params.id });
 });
 
+router.put('/:id', (req, res, next) => {
+  res.status(200).send({ success: true, id: req.params.id });
+});
+
 module.exports = router;
