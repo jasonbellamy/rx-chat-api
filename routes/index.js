@@ -5,6 +5,7 @@ router.get('/', (req, res, next) => {
   res.status(200).send({ success: true });
 });
 
+router.use('/auth', require('./auth'));
 router.use('/api/v1', require('./v1/index'));
 
 router.use((req, res, next) => {
