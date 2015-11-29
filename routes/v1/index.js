@@ -5,6 +5,7 @@ router.get('/', (req, res, next) => {
   res.status(200).send({ succuess: true });
 });
 
+router.use('/auth', require('./auth'));
 router.use('/users', require('./users'));
 
 router.use((req, res, next) => {
