@@ -1,9 +1,9 @@
 const assert    = require('chai').assert;
 const mockgoose = require('mockgoose');
 const mongoose  = require('mongoose');
+const User      = require('../../models/user');
 const db        = mockgoose(mongoose);
 
-const User      = require('../../models/user');
 
 describe('Models: User', () => {
   before(done => {
