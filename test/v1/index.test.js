@@ -15,7 +15,7 @@ describe('index', () => {
   describe('/404', () => {
     it('should return a 404 "Not Found" request', (done) => {
       request(app)
-      .post("/api/v1/some/route/that/does/not/exist")
+      .get("/api/v1/some/route/that/does/not/exist")
       .expect("Content-type",/json/)
       .expect(404, done);
     });
