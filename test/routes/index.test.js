@@ -2,7 +2,7 @@ const assert  = require('chai').assert;
 const request = require('supertest');
 const app     = require('../../app');
 
-describe('index', () => {
+describe('Routes: App', () => {
   describe('/', () => {
     it('should return a 404 "Not Found" request', (done) => {
       request(app)

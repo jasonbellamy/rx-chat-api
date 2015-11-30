@@ -2,7 +2,7 @@ const assert  = require('chai').assert;
 const request = require('supertest');
 const app     = require('../../../app');
 
-describe('users', () => {
+describe('Routes: API:Users (V1)', () => {
   describe('/', () => {
     describe(':GET', () => {
       it('should return a 200 "OK" request', (done) => {
