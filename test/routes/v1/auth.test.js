@@ -1,25 +1,23 @@
 const assert  = require('chai').assert;
 const request = require('supertest');
-const app     = require('../../app');
+const app     = require('../../../app');
 
-describe('index', () => {
-  describe('/', () => {
+describe('auth', () => {
+  describe('/login', () => {
     it('should return a 200 "OK" request', (done) => {
       request(app)
-      .get("/api/v1")
+      .post("/api/v1/auth/login")
       .expect("Content-type",/json/)
       .expect(200, done);
     });
   });
 
-  describe('/404', () => {
-    it('should return a 404 "Not Found" request', (done) => {
+  describe('/logout', () => {
+    it('should return a 200 "OK" request', (done) => {
       request(app)
-      .get("/api/v1/some/route/that/does/not/exist")
+      .post("/api/v1/auth/logout")
       .expect("Content-type",/json/)
-      .expect(404, done);
+      .expect(200, done);
     });
   });
-
 });
-
