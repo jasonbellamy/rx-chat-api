@@ -14,11 +14,17 @@ describe('Routes: API:Users (V1)', () => {
     });
 
     describe(':POST', () => {
-      it('should return a 200 "OK" request', (done) => {
+      it('should return a 500 " Internal Server Error" on validation fail', (done) => {
         request(app)
         .post("/api/v1/users")
-        .expect("Content-type",/json/)
-        .expect(200, done);
+        .expect(500, done);
+      });
+
+      it('should return a 201 "OK" on create', (done) => {
+        request(app)
+        .post("/api/v1/users")
+        .send({ username: 'username', password: 'password' })
+        .expect(201, done);
       });
     });
   });
