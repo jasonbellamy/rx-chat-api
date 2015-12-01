@@ -1,0 +1,4 @@
+{
+  "database": "mongodb://rxchat:password@apollo.modulusmongo.net:27017/as7yHyde",
+  "port": 8080
+}
