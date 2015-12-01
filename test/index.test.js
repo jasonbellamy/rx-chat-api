@@ -1,9 +1,10 @@
 const mockgoose = require('mockgoose');
 const mongoose  = require('mongoose');
+const config    = require('../config/');
 
 before(done => {
   mockgoose(mongoose);
-  mongoose.connect('mongodb://localhost/testdatabase', (err) => {
+  mongoose.connect(config.database, (err) => {
     done(err);
   });
 });
