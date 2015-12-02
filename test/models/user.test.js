@@ -1,5 +1,5 @@
-const assert    = require('chai').assert;
-const User      = require('../../models/user');
+import { assert } from 'chai';
+import User from '../../models/user';
 
 describe('Models: User', () => {
   describe('#create', () => {

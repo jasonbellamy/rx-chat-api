@@ -1,6 +1,6 @@
-const mockgoose = require('mockgoose');
-const mongoose  = require('mongoose');
-const config    = require('../config/');
+import mockgoose from 'mockgoose';
+import mongoose from 'mongoose';
+import config from '../config/';
 
 before(done => {
   mockgoose(mongoose);

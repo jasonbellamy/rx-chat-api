@@ -1,6 +1,6 @@
-const assert  = require('chai').assert;
-const request = require('supertest');
-const app     = require('../../../app');
+import { assert } from 'chai';
+import request from 'supertest';
+import app from '../../../app';
 
 describe('Routes: API (V1)', () => {
   describe('/', () => {
