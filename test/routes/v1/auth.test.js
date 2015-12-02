@@ -5,7 +5,6 @@ const User    = require('../../../models/user');
 
 describe('Routes: API:Auth (V1)', () => {
   describe('/login', () => {
-
     before(done => {
       User.create({username: 'username', password: 'password'}, () => done());
     });
@@ -24,15 +23,6 @@ describe('Routes: API:Auth (V1)', () => {
       .send({ username: 'badusername', password: 'password' })
       .expect("Content-type",/json/)
       .expect(401, done);
-    });
-  });
-
-  describe('/logout', () => {
-    it('should return a 200 "OK" request', (done) => {
-      request(app)
-      .post("/api/v1/auth/logout")
-      .expect("Content-type",/json/)
-      .expect(200, done);
     });
   });
 });

@@ -17,8 +17,4 @@ router.post('/login', (req, res, next) => {
   });
 });
 
-router.post('/logout', (req, res, next) => {
-  res.status(200).send({ success: true });
-});
-
 module.exports = router;
