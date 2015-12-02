@@ -1,10 +1,14 @@
-const express = require('express');
-const router  = express.Router();
+import { Router } from 'express';
+import routes from './v1/';
 
-router.use('/api/v1', require('./v1/'));
+export default function() {
+  const router = Router();
 
-router.use((req, res, next) => {
-  res.status(404).send({ success: true });
-});
+  router.use('/api/v1', routes(router));
 
-module.exports = router;
+  router.use((req, res, next) => {
+    res.status(404).send({ success: true });
+  });
+
+  return router;
+}

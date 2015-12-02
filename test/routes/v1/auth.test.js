@@ -1,7 +1,7 @@
-const assert  = require('chai').assert;
-const request = require('supertest');
-const app     = require('../../../app');
-const User    = require('../../../models/user');
+import { assert } from 'chai';
+import request from 'supertest';
+import app from '../../../app';
+import User from '../../../models/user';
 
 describe('Routes: API:Auth (V1)', () => {
   describe('/login', () => {

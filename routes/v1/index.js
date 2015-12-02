@@ -1,15 +1,20 @@
-const express = require('express');
-const router  = express.Router();
+import { Router } from 'express';
+import authRoutes from './auth';
+import usersRoutes from './users';
 
-router.get('/', (req, res, next) => {
-  res.status(200).send({ succuess: true });
-});
+export default function() {
+  const router = Router();
 
-router.use('/auth', require('./auth'));
-router.use('/users', require('./users'));
+  router.get('/', (req, res, next) => {
+    res.status(200).send({ success: true });
+  });
 
-router.use((req, res, next) => {
-  res.status(404).send({ succuess: true });
-});
+  router.use('/auth', authRoutes());
+  router.use('/users', usersRoutes());
 
-module.exports = router;
+  router.use((req, res, next) => {
+    res.status(404).send({ success: true });
+  });
+
+  return router;
+}

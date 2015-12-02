@@ -1,19 +1,21 @@
-const express    = require('express');
-const mongoose   = require('mongoose');
-const logger     = require('morgan');
-const bodyParser = require('body-parser');
-const app        = express();
-const config     = require('./config/');
+import express from 'express';
+import mongoose from 'mongoose';
+import logger from 'morgan';
+import bodyParser from 'body-parser';
+import config from './config/';
+import routes from './routes/';
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+export default (function() {
+  const app = express();
 
-if (app.get('env') === 'development') {
-  mongoose.connect(config.database);
-}
+  if (app.get('env') === 'development') {
+    mongoose.connect(config.database);
+  }
 
-app.use('/', require('./routes/'));
+  return app
+    .use(bodyParser.json())
+    .use(bodyParser.urlencoded({ extended: false }))
+    .use('/', routes())
+    .listen(config.port);
 
-app.listen(config.port);
-
-module.exports = app;
+})();
