@@ -26,7 +26,7 @@ describe('Routes: API:Auth (V1)', () => {
       .expect("Content-type",/json/)
       .expect(200)
       .end((err, res) => {
-        assert.property(res.body.entities, 'token');
+        assert.property(res.body.data, 'token');
         done();
       });
     });
@@ -46,7 +46,7 @@ describe('Routes: API:Auth (V1)', () => {
       .expect("Content-type",/json/)
       .expect(401)
       .end((err, res) => {
-        assert.notProperty(res.body.entities, 'token');
+        assert.notProperty(res.body.data, 'token');
         done();
       });
     });
