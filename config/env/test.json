@@ -1,4 +1,5 @@
 {
   "database": "mongodb://localhost/test",
+  "secret": "test",
   "port": 8080
 }
