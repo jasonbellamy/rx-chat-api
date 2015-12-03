@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import { successResponse, errorResponse } from '../../lib/responses';
+import authenticate from '../../middlewares/authenticate';
 import User from '../../models/user';
 
 export default function() {
   const router = Router();
 
-  router.get('/', (req, res, next) => {
+  router.get('/', authenticate, (req, res, next) => {
     res.status(200).json(successResponse('success'));
   });
 
@@ -21,11 +22,11 @@ export default function() {
     });
   });
 
-  router.get('/:id', (req, res, next) => {
+  router.get('/:id', authenticate, (req, res, next) => {
     res.status(200).json(successResponse('success', { id: req.params.id }));
   });
 
-  router.put('/:id', (req, res, next) => {
+  router.put('/:id', authenticate, (req, res, next) => {
     res.status(200).json(successResponse('success', { id: req.params.id }));
   });
 

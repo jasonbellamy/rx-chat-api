@@ -9,7 +9,6 @@ export default function() {
 
   router.post('/login', (req, res, next) => {
     User.findOne({ username: req.body.username }, (err, user) => {
-
       if (err) {
         return res.status(401).json(errorResponse('Authentication failed'));
       }
