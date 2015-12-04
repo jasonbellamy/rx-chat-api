@@ -1,5 +1,5 @@
 {
   "database": "mongodb://rxchat:password@apollo.modulusmongo.net:27017/as7yHyde",
-  "secret": "nico",
+  "secret": "development",
   "port": 8080
 }
