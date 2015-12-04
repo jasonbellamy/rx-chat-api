@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "NODE_ENV='test' mocha --recursive --require babel-core/register"
+    "test": "NODE_ENV='test' mocha app --recursive --require babel-core/register"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
