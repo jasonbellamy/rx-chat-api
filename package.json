@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start": "node index.js",
     "test": "NODE_ENV='test' mocha app --recursive --require babel-core/register"
   },
   "dependencies": {
