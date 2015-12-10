@@ -10,7 +10,7 @@ before(done => {
 });
 
 afterEach(done => {
-  mockgoose.reset();
+  mongoose.connection.db.dropDatabase();
   done();
 })
 
