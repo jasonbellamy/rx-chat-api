@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "NODE_ENV='test' mocha app --recursive --require babel-core/register"
+    "start": "node index.js",
+    "test": "NODE_ENV='test' mocha app/test --recursive --require babel-core/register"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jsonwebtoken": "^5.4.1",
-    "mongoose": "^4.2.8",
+    "mongoose": "^4.3.0",
     "morgan": "~1.6.1"
   },
   "devDependencies": {
@@ -19,7 +20,7 @@
     "babel-register": "^6.2.0",
     "chai": "^3.4.1",
     "mocha": "^2.3.4",
-    "mockgoose": "^5.0.4",
+    "mockgoose": "^5.0.10",
     "supertest": "^1.1.0"
   }
 }
